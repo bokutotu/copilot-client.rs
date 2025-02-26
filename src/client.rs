@@ -212,11 +212,12 @@ impl CopilotClient {
     pub async fn chat_completion(
         &self,
         messages: Vec<Message>,
+        model_id: String,
     ) -> Result<ChatResponse, Box<dyn Error>> {
         let url = "https://api.githubcopilot.com/chat/completions";
         let headers = self.get_headers().await?;
         let request_body = ChatRequest {
-            model: "your-model-id".to_string(), // 必要に応じてモデル ID を指定してください
+            model: model_id, // 必要に応じてモデル ID を指定してください
             messages,
             n: 1,
             top_p: 1.0,

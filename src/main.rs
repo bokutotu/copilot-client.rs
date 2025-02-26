@@ -29,7 +29,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
             content: "RustでHTTPリクエストを送る方法を教えてください。".to_string(),
         },
     ];
-    let chat_response = client.chat_completion(messages).await?;
+    let chat_response = client
+        .chat_completion(messages, "gemini-2.0-flash-001".to_string())
+        .await?;
     println!("Chat Response: {chat_response:?}");
 
     // 埋め込み生成リクエスト例
