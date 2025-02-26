@@ -20,7 +20,7 @@ Add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-copilot_client = "0.1.0"
+copilot-client = "0.1.0"
 ```
 
 ---
